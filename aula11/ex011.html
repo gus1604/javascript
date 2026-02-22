@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paises</title>
+    <style>
+        body{
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Digite sua Nacionalidade</h1>
+
+    <p>Digite sua nacionalidade aqui <input type="text" id="pais">
+    <input onclick="clicando()" type="button" value="Confirmar"></p>
+
+    <div id="res"></div>
+
+    <script>
+        function clicando() {
+            var res = document.getElementById('res')
+            var pais = document.getElementById('pais').value
+
+            res.innerHTML = `<p>Você está vivendo em ${pais}</p>`
+
+            if (pais.toLowerCase() != 'brasil') {
+                res.innerHTML += '<p>Você é Estrangeiro!</p>'
+            } else{
+                res.innerHTML += '<p>Você é Brasileiro!</p>'
+            }
+            
+        }
+    </script>
+</body>
+</html>
